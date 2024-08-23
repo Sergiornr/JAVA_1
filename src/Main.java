@@ -6,6 +6,8 @@ import java.util.Locale;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+        otorgaPrestamo(200.0,800.0);
         esMayor(3.2, 6.4 , 0.5);
 
 
@@ -119,6 +121,14 @@ crea una función que determine si el primero es mayor que el producto del segun
 /*Debemos desarrollar una funcionalidad para una entidad de préstamos que indique
 si la persona está habilitada a obtener uno en base a que el monto solicitado no supere el 35% de su sueldo.
  */
+public static void otorgaPrestamo (Double monto, Double sueldo){
+    if (sueldo*0.35 > monto){
+        System.out.println("Prestamo otorgado");
+
+    }else {
+        System.out.println("Prestamo denegado");
+    }
+}
 
 
 
