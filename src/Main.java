@@ -6,30 +6,46 @@ import java.util.Locale;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        faltasDisponibles(23,75);
-        faltas(23,0.75);
+ LocalDate fechaNacimiento = LocalDate.of(2001,10,6);
+        System.out.println(entrada(fechaNacimiento,false));
+        contarS(" Los soles estan cerca");
+    }
 
-        System.out.println(" Mensaje de prueba");
+    //Crea una función que de acuerdo a la edad del usuario( recibe fecha de nacimiento) y
+    // si tiene entrada indique si puede o no asistir al evento, debe ser mayor.
+    public static boolean entrada (LocalDate fechaNacimiento, boolean tieneEntrada) {
 
+        // primero necesito saber si es mayor de edad
+        Integer edad = LocalDate.now().getYear() - fechaNacimiento.getYear();
 
+        // segundo necesito saber si tiene entrada valida.
 
+        if (tieneEntrada && edad >= 18){
+
+            return true;
+        } else {
+            return false;
+        }
 
     }
-    //1. Escribir una función para calcular la cantidad de faltas
-    //disponibles de acuerdo a un porcentaje de asistencia y
-    //cantidad de encuentros determinado¿Cuál es el resultado para
-    //una cursada de 23 encuentros que requiere un 75% de
-    //asistencia? ¿Y para el caso de este módulo?
-    public static void faltasDisponibles (Integer encuentros, Integer porcentajeA){
 
-        Integer faltasDisponibles = encuentros - encuentros * porcentajeA/100;
-        System.out.println("Las faltas permitidas son : " + faltasDisponibles);
 
+    //Escribí una función que reciba una cadena de texto y
+    // cuente la cantidad de “s”. Retorna la cantidad encontrada.
+
+    public static int contarS (String texto){
+
+       int contador = 0;
+        for (int i = 0; i < texto.length(); i++){
+
+            if (texto.charAt(i) == 's'){
+                contador ++;
+            }
+
+        }
+        System.out.println(" La cantidad de s en el texto son : " + contador);
+        return contador;
     }
-    public static void faltas (int clases, double porcentajeB){
 
-        int faltas =  clases - (int) (clases * porcentajeB);
-        System.out.println(" La cantidad de faltas son : " + faltas);
 
-    }
 }
