@@ -6,6 +6,8 @@ import java.util.Locale;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        faltasDisponibles(23,75);
+
 
         otorgaPrestamo(200.0,800.0);
         esMayor(3.2, 6.4 , 0.5);
@@ -128,8 +130,30 @@ public static void otorgaPrestamo (Double monto, Double sueldo){
     }else {
         System.out.println("Prestamo denegado");
     }
+    //1. Escribir una función para calcular la cantidad de faltas
+    //disponibles de acuerdo a un porcentaje de asistencia y
+    //cantidad de encuentros determinado¿Cuál es el resultado para
+    //una cursada de 23 encuentros que requiere un 75% de
+    //asistencia? ¿Y para el caso de este módulo?
+
+    }
+
+public static void faltasDisponibles (  Integer encuentros,  Integer porcentajeA ){
+
+    Integer faltasDisponibles =  encuentros - encuentros * porcentajeA/100;
+    System.out.println("Faltas permitidas : " + faltasDisponibles);
+
+}
+//3. Necesitamos crear una función que reciba dos números en
+//formato texto y retorne el cociente de dividir el primero
+//por el segundo.
+
+
+
+
+
+
 }
 
 
 
-}
