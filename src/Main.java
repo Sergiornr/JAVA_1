@@ -6,6 +6,8 @@ import java.util.Locale;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        division("100", "30");
+
  LocalDate fechaNacimiento = LocalDate.of(2001,10,6);
         System.out.println(entrada(fechaNacimiento,false));
         contarS(" Los soles estan cerca");
@@ -47,5 +49,23 @@ public class Main {
         return contador;
     }
 
+//3. Necesitamos crear una función que reciba dos números en
+//formato texto y retorne el cociente de dividir el primero
+//por el segundo.
+    public static Integer division(String num1t, String num2t){
 
-}
+        Integer num1 = Integer.parseInt(num1t);
+        Integer num2 = Integer.parseInt(num2t);
+        Integer divisionNumeros = num1 / num2;
+        System.out.println(divisionNumeros);
+            return divisionNumeros;
+
+        }
+    }
+
+//Crea un array de cuatro películas  e imprimirlas por orden alfabético.
+
+String[] = peliculas = new peliculas[3];
+peliculas[0]= "Gladiador"
+
+
