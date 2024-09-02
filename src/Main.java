@@ -1,23 +1,78 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        division("100", "30");
-        //Crea un array de cuatro películas  e imprimirlas por orden alfabético.
-        String[]  peliculas = new String[3];
-        peliculas[0]= "Gladiador";
-
-
         LocalDate fechaNacimiento = LocalDate.of(2001, 10, 6);
         System.out.println(entrada(fechaNacimiento, false));
         contarS(" Los soles estan cerca");
     }
+        division("100", "30");
+        //Crea un array de cuatro películas  e imprimirlas por orden alfabético.
+        System.out.println(" array de peliculas ");
+        String[]  peliculas = new String[4];
+        peliculas[0]= "Gladiador";
+        peliculas[1]= "Interestelar";
+        peliculas[2]= "Avatar";
+        peliculas[3]= "War horse";
+        Arrays.sort(peliculas);
+        for (int i = 0; i < peliculas.length ; i++) {
 
-    //Crea una función que de acuerdo a la edad del usuario( recibe fecha de nacimiento) y
+            System.out.println(peliculas[i]);
+
+        }
+        //2. Crea un nuevo array que contenga la lista de películas en
+        //mayúscula.
+        System.out.println(" array de peliculas ");
+        String[]  Movies = new String[5];
+        Movies[0]= "Titanic";
+        Movies[1]= "Armagedon";
+        Movies[2]= "rocky";
+        Movies[3]= "El señor de los anillos";
+        Movies[4]= "La guerra de los mundos";
+
+        for (int i = 0; i < Movies.length ; i++) {
+            Movies[i]= Movies[i].toUpperCase();
+
+            System.out.println(Movies[i]);
+
+        }
+
+
+
+
+        }
+        //1. Crea un array de cuatro películas e imprimirlas por orden
+//alfabético. Aplicando Scanner
+        public class listasPeliculas {
+            public static void main (String[] args){
+                Scanner scanner = new Scanner(System.in);
+                String[] peliculasA = new String[4];
+                System.out.println("Ingrese cuatro peliculas");
+
+                for (int i = 0; i < peliculasA.length ; i++) {
+
+                    System.out.println(peliculasA[i]);
+                    peliculasA[i]= scanner.nextLine();
+
+                }
+                System.out.println("\nPeliculas ordenadas alfabeticamente : ");
+                for (String pelicula : peliculasA){
+                    System.out.println(pelicula);
+                }
+            }
+        }
+
+//2. Crea un nuevo array que contenga la lista de películas en mayúscula. Aplicando Scanner
+
+
+
+        //Crea una función que de acuerdo a la edad del usuario( recibe fecha de nacimiento) y
     // si tiene entrada indique si puede o no asistir al evento, debe ser mayor.
     public static boolean entrada(LocalDate fechaNacimiento, boolean tieneEntrada) {
 
