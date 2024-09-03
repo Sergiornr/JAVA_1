@@ -12,7 +12,7 @@ public class Main {
         System.out.println(entrada(fechaNacimiento, false));
         contarS(" Los soles estan cerca");
     }
-        division("100", "30");
+       division("100", "30");
         //Crea un array de cuatro películas  e imprimirlas por orden alfabético.
         System.out.println(" array de peliculas ");
         String[]  peliculas = new String[4];
@@ -49,8 +49,8 @@ public class Main {
         }
         //1. Crea un array de cuatro películas e imprimirlas por orden
 //alfabético. Aplicando Scanner
-        public class listasPeliculas {
-            public static void main (String[] args){
+
+            public static void listasPeliculas(){
                 Scanner scanner = new Scanner(System.in);
                 String[] peliculasA = new String[4];
                 System.out.println("Ingrese cuatro peliculas");
@@ -66,7 +66,7 @@ public class Main {
                     System.out.println(pelicula);
                 }
             }
-        }
+
 
 //2. Crea un nuevo array que contenga la lista de películas en mayúscula. Aplicando Scanner
 
