@@ -1,13 +1,15 @@
 import java.time.LocalDate;
+import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         faltasDisponibles(23,75);
         faltas(23,0.75);
+        calcularAnioNacimiento(37)
 
         System.out.println(" Mensaje de prueba");
 
@@ -33,3 +35,16 @@ public class Main {
 
     }
 }
+
+//4. Crea una función que reciba una edad y determine el año de
+//nacimiento.
+public static int calcularAnioNacimiento(int edad){
+    int anioActual = Year.now();
+    int anioNacimiento = anioActual-edad;
+    return anioNacimiento;
+
+}
+//5. Se requiere una función que retorne si un monto de pago
+//recibido es mayor a una deuda ingresada e imprima el saldo a
+//favor o adeudado.
+
