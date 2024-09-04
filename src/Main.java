@@ -11,17 +11,20 @@ public class Main {
         LocalDate fechaNacimiento = LocalDate.of(2001, 10, 6);
         System.out.println(entrada(fechaNacimiento, false));
         contarS(" Los soles estan cerca");
-    }
-       division("100", "30");
+
+
+        division("100", "30");
         //Crea un array de cuatro películas  e imprimirlas por orden alfabético.
         System.out.println(" array de peliculas ");
-        String[]  peliculas = new String[4];
-        peliculas[0]= "Gladiador";
-        peliculas[1]= "Interestelar";
-        peliculas[2]= "Avatar";
-        peliculas[3]= "War horse";
+        String[] peliculas = new String[4];
+        peliculas[0] = "Gladiador";
+        peliculas[1] = "Interestelar";
+        peliculas[2] = "Avatar";
+        peliculas[3] = "War horse";
         Arrays.sort(peliculas);
-        for (int i = 0; i < peliculas.length ; i++) {
+        for (
+                int i = 0;
+                i < peliculas.length; i++) {
 
             System.out.println(peliculas[i]);
 
@@ -29,50 +32,48 @@ public class Main {
         //2. Crea un nuevo array que contenga la lista de películas en
         //mayúscula.
         System.out.println(" array de peliculas ");
-        String[]  Movies = new String[5];
-        Movies[0]= "Titanic";
-        Movies[1]= "Armagedon";
-        Movies[2]= "rocky";
-        Movies[3]= "El señor de los anillos";
-        Movies[4]= "La guerra de los mundos";
+        String[] Movies = new String[5];
+        Movies[0] = "Titanic";
+        Movies[1] = "Armagedon";
+        Movies[2] = "rocky";
+        Movies[3] = "El señor de los anillos";
+        Movies[4] = "La guerra de los mundos";
 
-        for (int i = 0; i < Movies.length ; i++) {
-            Movies[i]= Movies[i].toUpperCase();
+        for (
+                int i = 0;
+                i < Movies.length; i++) {
+            Movies[i] = Movies[i].toUpperCase();
 
             System.out.println(Movies[i]);
 
         }
+    }
 
-
-
-
-        }
-        //1. Crea un array de cuatro películas e imprimirlas por orden
+    //1. Crea un array de cuatro películas e imprimirlas por orden
 //alfabético. Aplicando Scanner
 
-            public static void listasPeliculas(){
-                Scanner scanner = new Scanner(System.in);
-                String[] peliculasA = new String[4];
-                System.out.println("Ingrese cuatro peliculas");
+    public static void listasPeliculas() {
+        Scanner scanner = new Scanner(System.in);
+        String[] peliculasA = new String[4];
+        System.out.println("Ingrese cuatro peliculas");
 
-                for (int i = 0; i < peliculasA.length ; i++) {
+        for (int i = 0; i < peliculasA.length; i++) {
 
-                    System.out.println(peliculasA[i]);
-                    peliculasA[i]= scanner.nextLine();
+            System.out.println(peliculasA[i]);
+            peliculasA[i] = scanner.nextLine();
 
-                }
-                System.out.println("\nPeliculas ordenadas alfabeticamente : ");
-                for (String pelicula : peliculasA){
-                    System.out.println(pelicula);
-                }
-            }
+        }
+        System.out.println("\nPeliculas ordenadas alfabeticamente : ");
+        for (String pelicula : peliculasA) {
+            System.out.println(pelicula);
+        }
+    }
 
 
 //2. Crea un nuevo array que contenga la lista de películas en mayúscula. Aplicando Scanner
 
 
-
-        //Crea una función que de acuerdo a la edad del usuario( recibe fecha de nacimiento) y
+    //Crea una función que de acuerdo a la edad del usuario( recibe fecha de nacimiento) y
     // si tiene entrada indique si puede o no asistir al evento, debe ser mayor.
     public static boolean entrada(LocalDate fechaNacimiento, boolean tieneEntrada) {
 
