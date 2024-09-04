@@ -9,7 +9,8 @@ public class Main {
     public static void main (String[] args) {
         faltasDisponibles(23,75);
         faltas(23,0.75);
-        calcularAnioNacimiento(37)
+
+        System.out.println(" El año de nacimiento es : " + calcularAnioNacimiento(37));
 
         System.out.println(" Mensaje de prueba");
 
@@ -34,12 +35,12 @@ public class Main {
         System.out.println(" La cantidad de faltas son : " + faltas);
 
     }
-}
+
 
 //4. Crea una función que reciba una edad y determine el año de
 //nacimiento.
 public static int calcularAnioNacimiento(int edad){
-    int anioActual = Year.now();
+    int anioActual = LocalDate.now().getYear();
     int anioNacimiento = anioActual-edad;
     return anioNacimiento;
 
@@ -48,3 +49,4 @@ public static int calcularAnioNacimiento(int edad){
 //recibido es mayor a una deuda ingresada e imprima el saldo a
 //favor o adeudado.
 
+}
