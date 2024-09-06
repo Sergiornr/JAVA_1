@@ -55,6 +55,10 @@ public class Main {
     public static void listasPeliculas() {
         Scanner scanner = new Scanner(System.in);
         String[] peliculasA = new String[4];
+        peliculasA[0] = "Gladiador";
+        peliculasA[1] = "Interestelar";
+        peliculasA[2] = "Avatar";
+        peliculasA[3] = "War horse";
         System.out.println("Ingrese cuatro peliculas");
 
         for (int i = 0; i < peliculasA.length; i++) {
