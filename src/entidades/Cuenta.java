@@ -16,7 +16,7 @@ public class Cuenta {
     private Double saldoInicial;
     private Integer cbu;
     private String alias;
-
+// retirarEfectivo seria una mejor opcion
     public void retirarCuenta(Double monto){
 
 
@@ -29,8 +29,10 @@ public class Cuenta {
     }
     public void transferirCuenta( Double monto){
 if (monto <= saldoInicial){
-    transferirCuenta()= saldoInicial - monto;
-    System.out.println(transferirCuenta());
+    saldoInicial= saldoInicial - monto;
+    System.out.println("Transferencia exitosa"+ saldoInicial);
+}else {
+    System.out.println("Error de Transferencia");
 }
     }
     public void depositarCuenta(double deposito){
@@ -45,5 +47,10 @@ if (monto <= saldoInicial){
     }
 
 
+    public Integer getcbu(){
+        return this.cbu;
+}
+
 
 }
+
