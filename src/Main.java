@@ -5,6 +5,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class Main {
         System.out.println(entrada(fechaNacimiento, false));
         contarS(" Los soles estan cerca");
 
-
+listarPeliculas();
         division("100", "30");
         //Crea un array de cuatro películas  e imprimirlas por orden alfabético.
         System.out.println(" array de peliculas ");
@@ -52,25 +53,23 @@ public class Main {
     //1. Crea un array de cuatro películas e imprimirlas por orden
 //alfabético. Aplicando Scanner
 
-    public static void listasPeliculas() {
+    public static void listarPeliculas() {
         Scanner scanner = new Scanner(System.in);
-        String[] peliculasA = new String[4];
-        peliculasA[0] = "Gladiador";
-        peliculasA[1] = "Interestelar";
-        peliculasA[2] = "Avatar";
-        peliculasA[3] = "War horse";
-        System.out.println("Ingrese cuatro peliculas");
+        String[] peliculasOrdenadas = new String[2];
+        System.out.println("Ingrese pelicula 1");
+        String peli1 = scanner.nextLine();
+        peliculasOrdenadas[0] = peli1;
+        System.out.println("Ingrese pelicula 2");
+        String peli2 = scanner.nextLine();
+        peliculasOrdenadas[1] = peli2;
+        Arrays.sort(peliculasOrdenadas);
+        for (int i = 0; i < peliculasOrdenadas.length; i++) {
 
-        for (int i = 0; i < peliculasA.length; i++) {
+            System.out.println(peliculasOrdenadas[i]);
 
-            System.out.println(peliculasA[i]);
-            peliculasA[i] = scanner.nextLine();
 
         }
-        System.out.println("\nPeliculas ordenadas alfabeticamente : ");
-        for (String pelicula : peliculasA) {
-            System.out.println(pelicula);
-        }
+
     }
 
 
@@ -125,10 +124,9 @@ public class Main {
         return divisionNumeros;
 
     }
+
+
 }
-
-
-
 
 
 
