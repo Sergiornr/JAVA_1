@@ -13,7 +13,8 @@ public class Main {
         System.out.println(entrada(fechaNacimiento, false));
         contarS(" Los soles estan cerca");
 
-listarPeliculas();
+//listarPeliculas();
+enlistarPeliculas();
         division("100", "30");
         //Crea un array de cuatro películas  e imprimirlas por orden alfabético.
         System.out.println(" array de peliculas ");
@@ -75,10 +76,26 @@ listarPeliculas();
 
 //2. Crea un nuevo array que contenga la lista de películas en mayúscula. Aplicando Scanner
 
+   public static void enlistarPeliculas() {
+       Scanner scanner = new Scanner(System.in);
+       String[] ordenPeliculas = new String[2];
+       System.out.println("Ingrese pelicula 1");
+       String peli1 = scanner.nextLine();
+       ordenPeliculas[0] = peli1;
+       System.out.println("Ingrese pelicula 2");
+       String peli2 = scanner.nextLine();
+       ordenPeliculas[1] = peli2;
+       Arrays.sort(ordenPeliculas);
+       for (int i = 0; i < ordenPeliculas.length; i++) {
 
+           System.out.println(ordenPeliculas[i].toUpperCase());
+
+
+       }
+   }
     //Crea una función que de acuerdo a la edad del usuario( recibe fecha de nacimiento) y
     // si tiene entrada indique si puede o no asistir al evento, debe ser mayor.
-    public static boolean entrada(LocalDate fechaNacimiento, boolean tieneEntrada) {
+   public static boolean entrada( LocalDate fechaNacimiento, boolean tieneEntrada){
 
         // primero necesito saber si es mayor de edad
         Integer edad = LocalDate.now().getYear() - fechaNacimiento.getYear();
