@@ -4,17 +4,17 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
 public class Main {
     public static void main(String[] args) {
         LocalDate fechaNacimiento = LocalDate.of(2001, 10, 6);
         System.out.println(entrada(fechaNacimiento, false));
         contarS(" Los soles estan cerca");
-
+        System.out.println(compararCadenaDeTexto());
 //listarPeliculas();
-enlistarPeliculas();
+        enlistarPeliculas();
         division("100", "30");
         //Crea un array de cuatro películas  e imprimirlas por orden alfabético.
         System.out.println(" array de peliculas ");
@@ -49,7 +49,32 @@ enlistarPeliculas();
             System.out.println(Movies[i]);
 
         }
-    }
+        //Crea una variable que guardará la primera película que
+//comience con “L”, se debe recorrer el array buscando el primer
+//resultado.
+        System.out.println(" array de peliculas que comienzan con L");
+        String[] peliculas4 = new String[4];
+        peliculas4[0]="Gladiador";
+        peliculas4[1]="Interestelar";
+        peliculas4[2]="Avatar";
+        peliculas4[3]="Los 7 magnificos";
+        Arrays.sort(peliculas4);
+        for(String pelicula :peliculas4)
+
+        {
+            if (pelicula.startsWith("L")) {
+                System.out.println("La primera pelicula que empieza con L es: " + pelicula);
+            } else {
+                System.out.println("No hay peliculas que empiecen con L");
+            }
+        }
+
+
+        }
+
+
+
+
 
     //1. Crea un array de cuatro películas e imprimirlas por orden
 //alfabético. Aplicando Scanner
@@ -74,6 +99,10 @@ enlistarPeliculas();
     }
 
 
+
+
+
+
 //2. Crea un nuevo array que contenga la lista de películas en mayúscula. Aplicando Scanner
 
    public static void enlistarPeliculas() {
@@ -93,6 +122,40 @@ enlistarPeliculas();
 
        }
    }
+    //Necesitamos un programa que reciba dos cadenas de texto y
+    // que  cada una contenga dos películas separadas por una coma.
+    //
+    //El método debe retornar la que tenga mayor cantidad de caracteres.
+    //Debe generar un array de cuatro elementos.
+    //Debe guardar las cuatro películas en el array e imprimirlas por consola.
+   public static  String compararCadenaDeTexto(){
+    Scanner scanner = new Scanner(System.in);
+       System.out.println("Ingrese cadena de texto separado por una coma");
+       String cadena1=scanner.nextLine();
+       System.out.println("Ingrese segunda cadena de texto separado por una coma");
+       String cadena2=scanner.nextLine();
+       if (cadena1.compareTo(cadena2) == -1){
+           return cadena2;
+       } else if (cadena1.compareTo(cadena2)== 0) {
+           return "Son iguales";
+       } else {
+           return cadena1;
+       }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Crea una función que de acuerdo a la edad del usuario( recibe fecha de nacimiento) y
     // si tiene entrada indique si puede o no asistir al evento, debe ser mayor.
    public static boolean entrada( LocalDate fechaNacimiento, boolean tieneEntrada){
