@@ -11,27 +11,30 @@ public class Producto {
     private Double precioCompra;
     private Double precioVenta;
     private Integer stock;
-    private Integer cantidad;
 
+
+    public Double getPrecioVenta() {
+        return precioVenta;
+    }
 
     public boolean stockDisponible(){
         return stock > 0;
     }
-    public static Double calcularGanancia(){
+    public Double calcularGanancia(){
        return precioVenta - precioCompra;
     }
 public int compararNombre(Producto otroProducto){
         return this.nombre.compareTo(otroProducto.nombre);
 }
 
-public Producto(String nombreR, Double precioCompraR, Double precioVentaR, Integer stockR,Integer cantidadR ){
+public Producto(String nombreR, Double precioCompraR, Double precioVentaR, Integer stockR){
         this.nombre = nombreR;
         this.precioCompra = precioCompraR;
         this.precioVenta = precioVentaR;
         this.stock = stockR;
-        this.cantidad = cantidadR;
+
 }
-public Double calcularCostoTotal() {
-        return precioCompra * cantidad;
-}
+//public Double calcularCostoTotal() {
+ //       return precioCompra * cantidad;
+//}
 }
