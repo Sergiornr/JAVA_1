@@ -16,6 +16,7 @@ public class Producto {
     public Double getPrecioVenta() {
         return precioVenta;
     }
+    public Integer getStock(){return stock;}
 
     public boolean stockDisponible(){
         return stock > 0;
@@ -34,6 +35,19 @@ public Producto(String nombreR, Double precioCompraR, Double precioVentaR, Integ
         this.stock = stockR;
 
 }
+public Integer compararProducto(Producto otroProducto){
+        if (this.stock > otroProducto.getStock()){
+            return 1;
+
+        } else if (this.stock < otroProducto.getStock()){
+            return -1;
+        } else {
+            return 0;
+        }
+}
+
+
+
 //public Double calcularCostoTotal() {
  //       return precioCompra * cantidad;
 //}

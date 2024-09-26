@@ -22,7 +22,7 @@ public class Main {
         System.out.println("venta1 y venta2 son iguales?" + venta1.verificarDosVentasIguales(venta2));
         //System.out.println("venta1 y venta3 son iguales?" + venta1.verificarDosVentasIguales(venta3));
         System.out.println("calcular monto de venta " + venta1.calcularMontoVenta());
-        //System.out.println("comparando Producto1 y Producto2 "+ ollaAcero.compararNombre(ollaAluminio));
+        System.out.println("comparando Producto1 y Producto2 "+ ollaAcero.compararProducto(ollaAluminio));
         System.out.println("comision: "+ venta1.calcularComisionVenta());
         //System.out.println("el costo total de ollaAcero es: " + ollaAcero.calcularCostoTotal());
 // comparar productos en base al stock
