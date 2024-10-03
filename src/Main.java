@@ -7,7 +7,8 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) {
 
-
+Empleado empleado1 = new Empleado("sergio", 56789754, 133789);
+EmpleadoLimpiezaGeneral empleado100 = new EmpleadoLimpiezaGeneral("juan dominguez", 18999990, 238907,)
 }
 
 
