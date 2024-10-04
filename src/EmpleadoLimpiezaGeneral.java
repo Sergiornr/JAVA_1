@@ -1,10 +1,10 @@
 public class EmpleadoLimpiezaGeneral extends EmpleadoLimpieza{
 
-    private Integer cantidadHorasExtras;
-    private static Double valorHoraExtra;
+    private Integer cantidadHorasExtras = 0;
+    private static Double valorHoraExtra = 3000.0;
 
-    public EmpleadoLimpiezaGeneral(String nombreR, Integer dniR, Integer legajoR, Double sueldoTotal, Integer cantidadHorasExtras) {
-        super(nombreR, dniR, legajoR, sueldoTotal);
+    public EmpleadoLimpiezaGeneral(String nombreR, Integer dniR, Integer legajoR, Integer cantidadHorasExtras) {
+        super(nombreR, dniR, legajoR);
         this.cantidadHorasExtras = cantidadHorasExtras;
     }
 

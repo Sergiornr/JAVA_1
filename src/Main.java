@@ -7,8 +7,14 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) {
 
-Empleado empleado1 = new Empleado("sergio", 56789754, 133789);
-EmpleadoLimpiezaGeneral empleado100 = new EmpleadoLimpiezaGeneral("juan dominguez", 18999990, 238907,)
+        LavadorVajilla empleado1 = new LavadorVajilla("SERGIO", 45678909, 234566, 6);
+        EmpleadoLimpiezaGeneral empleado100 = new EmpleadoLimpiezaGeneral("FEDERICO", 67890987, 345678, 7);
+        empleado1.romperVajilla(5, 3000.0);
+        empleado1.calcularSueldoMes();
+        empleado100.realizarHorasExtra(15);
+        System.out.println(empleado100.calcularValorHorasExtra());
+        empleado100.calcularSueldoMes();
+    }
 }
 
 
