@@ -11,16 +11,6 @@ public class Mascota {
 
     }
 
-    @Override
-    public String toString() {
-        return "Mascota{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", especie='" + especie + '\'' +
-                ", setInfoString=" + setInfoString +
-                ", edadR=" + edadR +
-                '}';
-    }
 
     public void setInfo(String nombreR,Integer edadR ){
         this.nombre = nombreR;
@@ -28,10 +18,12 @@ public class Mascota {
     };
 
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Mascota{" +
+                "nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                ", especie='" + especie + '\'' +
+                '}';
+    }
 }

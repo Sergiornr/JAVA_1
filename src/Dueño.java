@@ -13,17 +13,31 @@ public class Dueño {
         this.telefono = telefonoR;
         this.direccion = direccionR;
         this.mascotas = new ArrayList<Mascota>();
+        this.veterinarios = new ArrayList<Veterinario>();
     }
 public void registrarMascota(Mascota mascotaR){
      this.mascotas.add(mascotaR);
 }
-public void programarTurno(){
-   this.veterinarios.add(Veterinario);
+public void programarTurno(Veterinario veterinario){
+   this.veterinarios.add(veterinario);
 }
-public void listarAnimales(){
+
+    @Override
+    public String toString() {
+        return "Dueño{" +
+                "nombre='" + nombre + '\'' +
+                ", telefono=" + telefono +
+                ", direccion='" + direccion + '\'' +
+                ", mascotas=" + mascotas +
+                ", veterinarios=" + veterinarios +
+                '}';
+    }
+
+    public void listarAnimales(){
     for (int i = 0; i < mascotas.size(); i++) {
         System.out.println(mascotas.get(i));
     }
+
 }
 
 
