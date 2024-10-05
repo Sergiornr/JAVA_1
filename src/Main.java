@@ -13,8 +13,8 @@ public class Main {
         Producto ollaAluminio = new Producto("Essen",60000.0, 80000.0,100);
         Producto ollaAcero = new Producto("Eccen", 50000.0, 70000.0, 20 );
         ollaAcero.stockDisponible();
-        System.out.println(ollaAcero.stockDisponible());
-        ollaAcero.calcularGanancia();
+        System.out.println("Tiene stock disponible: " + ollaAcero.stockDisponible());
+
         System.out.println(" La ganancia es de : " + ollaAcero.calcularGanancia());
         Venta venta1 = new Venta(ollaAcero, 123654, "juan", new Date(124,2,20),56);
         Venta venta2 = new Venta(ollaAcero, 123654, "juan", new Date(124,2,20),56);
@@ -24,7 +24,8 @@ public class Main {
         System.out.println("calcular monto de venta " + venta1.calcularMontoVenta());
         System.out.println("comparando Producto1 y Producto2 "+ ollaAcero.compararProducto(ollaAluminio));
         System.out.println("comision: "+ venta1.calcularComisionVenta());
-        //System.out.println("el costo total de ollaAcero es: " + ollaAcero.calcularCostoTotal());
+        System.out.println("El costo total es de : $"+ ollaAcero.calcularCostoTotal());
+        System.out.println(" la info de venta es: "+ venta1.toString());
 // comparar productos en base al stock
 
         ArrayList <Producto> listaProductos = new ArrayList<>();

@@ -48,7 +48,7 @@ public Integer compararProducto(Producto otroProducto){
 
 
 
-//public Double calcularCostoTotal() {
- //       return precioCompra * cantidad;
-//}
+public Double calcularCostoTotal() {
+        return precioCompra * stock;
+}
 }
