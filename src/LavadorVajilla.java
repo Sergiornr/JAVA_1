@@ -3,9 +3,9 @@ public class LavadorVajilla extends EmpleadoLimpieza {
     private Integer cantidadVajillaRota = 0 ;
     private Double costoAcumuladoVajillaRota = 0.0;
 
-    public LavadorVajilla(String nombreR, Integer dniR, Integer legajoR,Integer cantidadVajillaRota) {
+    public LavadorVajilla(String nombreR, Integer dniR, Integer legajoR) {
         super(nombreR, dniR, legajoR);
-        this.cantidadVajillaRota = cantidadVajillaRota;
+
         this.costoAcumuladoVajillaRota = costoAcumuladoVajillaRota;
     }
         @Override
