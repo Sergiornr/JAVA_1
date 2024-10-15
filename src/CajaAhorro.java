@@ -2,7 +2,7 @@ public class CajaAhorro extends Cuenta {
     private Double tasaInteres;
 
 
-    public CajaAhorro(Double saldo, Cliente cliente, Double tasaInteres) {
+    public CajaAhorro(Double saldo, Integer cliente, Double tasaInteres) {
         super(saldo, cliente);
         this.tasaInteres = tasaInteres;}
         @Override

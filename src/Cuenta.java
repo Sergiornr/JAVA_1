@@ -3,7 +3,7 @@ public abstract class  Cuenta {
     private Double saldo;
     private Cliente cliente;
 
-    public Cuenta(Double saldo, Cliente cliente) {
+    public Cuenta(Double saldo, Integer cliente) {
         this.saldo = saldo;
         this.cliente = cliente;
     }
