@@ -1,12 +1,12 @@
-public class CuentaCorriente extends Cuenta{
-    private Double montoDescubiertoAutorizado;
+//public class CuentaCorriente  Cuenta{
+    //private Double montoDescubiertoAutorizado;
 
-    public CuentaCorriente(Double saldo, Integer cliente, Double montoDescubiertoAutorizado) {
-        super(saldo, cliente);
-        this.montoDescubiertoAutorizado = montoDescubiertoAutorizado;
-    }
+    //public CuentaCorriente(Double saldo, Cliente cliente, Double montoDescubiertoAutorizado) {
+        //super(saldo, cliente);
+        //this.montoDescubiertoAutorizado = montoDescubiertoAutorizado;
+    //}
 
-    public void depositarCheque(Double cheque){
+    //public void depositarCheque(Double cheque){
 
-    }
-}
+    //}
+//}

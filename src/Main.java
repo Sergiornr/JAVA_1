@@ -9,9 +9,10 @@ public class Main {
 
 Cliente cliente1 = new Cliente(123789,"Fernandez",45789765,120988765);
 
-CajaAhorro cajaAhorro1 = new CajaAhorro(200000.0,234654,24.9);
-CuentaCorriente cuentaCorriente = new CuentaCorriente(289765.0,234678,600000.0);
-Cheque cheque1 = new Cheque(278098.0,3445677600000.0,45567787.8,600000.0,"Banco Lucro SA",21/4/2024);
+CajaAhorro cajaAhorro1 = new CajaAhorro(200000.0,cliente1,24.9);
+//CuentaCorriente cuentaCorriente = new CuentaCorriente(289765.0,cliente1,600000.0);
+ cajaAhorro1.depositarEfectivo(30000.0);
+ cajaAhorro1.extraerEfectivo(50000.0);
 
 
 

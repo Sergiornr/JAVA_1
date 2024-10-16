@@ -1,12 +1,11 @@
 import java.util.Date;
 
-public class Cheque extends CuentaCorriente{
+public class Cheque {
     private Double monto;
     private String bancoEmisor;
     private Date fechaPago;
 
-    public Cheque(Double saldo, Integer cliente, Double montoDescubiertoAutorizado, Double monto, String bancoEmisor, Date fechaPago) {
-        super(saldo, cliente, montoDescubiertoAutorizado);
+    public Cheque(Double monto, String bancoEmisor, Date fechaPago) {
         this.monto = monto;
         this.bancoEmisor = bancoEmisor;
         this.fechaPago = fechaPago;
@@ -21,3 +20,9 @@ public class Cheque extends CuentaCorriente{
                 '}';
     }
 }
+
+
+
+
+
+
