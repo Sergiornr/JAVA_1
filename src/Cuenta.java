@@ -16,10 +16,10 @@ public abstract class  Cuenta {
         this.saldo = saldo;
     }
 
-    public abstract void depositarEfectivo(Double deposito);
+    public abstract void depositar(Double deposito);
 
 
-    public abstract Double extraerEfectivo(Double monto);
+    public abstract Double extraer(Double monto);
     public void informarSaldo(){
         System.out.println("tiene saldo disponible "+ saldo);
     }

@@ -12,7 +12,7 @@ public class CuentaCorriente extends Cuenta {
     }
 
     @Override
-    public Double extraerEfectivo(Double monto) {
+    public Double extraer(Double monto) {
         if (getSaldo() >= monto) {
             Double saldoNuevo = getSaldo() - monto;
             setSaldo(saldoNuevo);
@@ -30,7 +30,7 @@ public class CuentaCorriente extends Cuenta {
     }
 
     @Override
-    public void depositarEfectivo(Double deposito) {
+    public void depositar(Double deposito) {
         if (deposito <= 0){
             System.out.println("Ingrese un monto valido ");
         } else if (!(montoDescubiertoAutorizado.equals(limiteMontoAutorizado))){

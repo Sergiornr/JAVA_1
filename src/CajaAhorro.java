@@ -6,12 +6,12 @@ public class CajaAhorro extends Cuenta {
         super(saldo, cliente);
         this.tasaInteres = tasaInteres;}
         @Override
-        public void depositarEfectivo(Double deposito){
+        public void depositar(Double deposito){
 Double nuevoSaldo = getSaldo() + deposito;
 this.setSaldo(nuevoSaldo);
         }
         @Override
-        public Double extraerEfectivo(Double monto){
+        public Double extraer(Double monto){
             if (getSaldo()>= monto){
               setSaldo(getSaldo() - monto);
                 System.out.println(monto);
