@@ -39,12 +39,25 @@ public class CuentaCorriente extends Cuenta {
            deposito=  deposito - deuda;
            setSaldo(getSaldo()+ deposito);
             System.out.println("El saldo quedo en "+getSaldo()+"el monto disponible es "+montoDescubiertoAutorizado);
-        } else  {
-            setSaldo(getSaldo()+ deposito);
-            System.out.println(" Saldo actual "+ getSaldo());
+        } if (monto >= diferencia) {
+
+            this.montoDisponible = this.montoDisponible + diferencia;
+            monto -= diferencia;
+            this.setSaldo(monto);
+            System.out.println("saldo actual después de depositar" + this.getSaldo());
+
+        } else {
+            this.montoDisponible = this.montoDisponible + monto;
+            System.out.println("saldo actual después de depositar" + this.getSaldo() +
+                    " descubierto quedó en" + this.montoDisponible);
+        }
+    } else {
+        Double nuevoSaldo = this.getSaldo() + monto;
+        this.setSaldo(nuevoSaldo);
+        System.out.println("saldo actual después de depositar " + this.getSaldo());
         }
 
     }
 
 
-}
+
