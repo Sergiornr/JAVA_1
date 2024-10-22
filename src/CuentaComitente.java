@@ -19,7 +19,7 @@ public class CuentaComitente extends Cuenta{
     // extraer con clave, sin restriccion del minimo
     public boolean extraer( Double monto, String clave){
         if (clave.equals(this.claveAutorizacion)){
-            return super.extraer(monto)
+            return super.extraer(monto);
         } else{
             return false; // clave incorrecta
         }

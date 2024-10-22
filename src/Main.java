@@ -12,7 +12,7 @@ public class Main {
         CajaAhorro cajaAhorro1 = new CajaAhorro(200000.0, cliente1, 24.9);
         CuentaCorriente cuentaCorriente = new CuentaCorriente(3000.0, cliente1);
         CuentaComitente cuentaComitente = new CuentaComitente(15000.0, cliente1, "1234");
-        Cheque cheque1 = new Cheque(40000.0, "Banco Nacion", 12 / 09 / 2024);
+        Cheque cheque1 = new Cheque(40000.0, "Banco Nacion", 12 / 9 / 2024);
         cajaAhorro1.depositarEfectivo(30000.0);
         cajaAhorro1.extraerEfectivo(50000.0);
         System.out.println("metodos de cuenta corriente ");

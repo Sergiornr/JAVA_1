@@ -16,13 +16,13 @@ public class CuentaCorriente extends Cuenta {
         if (getSaldo() >= monto) {
             Double saldoNuevo = getSaldo() - monto;
             setSaldo(saldoNuevo);
-            System.out.println("Este es el saldo nuevo "+ getSaldo());
+            System.out.println("Este es el saldo nuevo " + getSaldo());
             return monto;
-        } else if (getSaldo()+ montoDescubiertoAutorizado>= monto) {
-            Double descubiertoSolicitado= monto - getSaldo();
+        } else if (getSaldo() + montoDescubiertoAutorizado >= monto) {
+            Double descubiertoSolicitado = monto - getSaldo();
             setSaldo(0.0);
             montoDescubiertoAutorizado = montoDescubiertoAutorizado - descubiertoSolicitado;
-            System.out.println("Este es el monto descubierto disponible "+ montoDescubiertoAutorizado);
+            System.out.println("Este es el monto descubierto disponible " + montoDescubiertoAutorizado);
             return monto;
         }
         System.out.println("indique un monto valido ");
@@ -31,33 +31,34 @@ public class CuentaCorriente extends Cuenta {
 
     @Override
     public void depositar(Double deposito) {
-        if (deposito <= 0){
+        if (deposito <= 0) {
             System.out.println("Ingrese un monto valido ");
-        } else if (!(montoDescubiertoAutorizado.equals(limiteMontoAutorizado))){
-           Double deuda = limiteMontoAutorizado - montoDescubiertoAutorizado;
-           montoDescubiertoAutorizado = montoDescubiertoAutorizado + deuda;
-           deposito=  deposito - deuda;
-           setSaldo(getSaldo()+ deposito);
-            System.out.println("El saldo quedo en "+getSaldo()+"el monto disponible es "+montoDescubiertoAutorizado);
-        } if (monto >= diferencia) {
+        } else if (!(montoDescubiertoAutorizado.equals(limiteMontoAutorizado))) {
+            Double deuda = limiteMontoAutorizado - montoDescubiertoAutorizado;
+            montoDescubiertoAutorizado = montoDescubiertoAutorizado + deuda;
+            deposito = deposito - deuda;
+            setSaldo(getSaldo() + deposito);
+            System.out.println("El saldo quedo en " + getSaldo() + "el monto disponible es " + montoDescubiertoAutorizado);
+        }
+        if (deposito >= deuda) {
 
-            this.montoDisponible = this.montoDisponible + diferencia;
-            monto -= diferencia;
-            this.setSaldo(monto);
+            this.depositoDisponible = this.depositoDisponible + deuda;
+            deposito -= deuda;
+            this.setSaldo(deposito);
             System.out.println("saldo actual después de depositar" + this.getSaldo());
 
         } else {
-            this.montoDisponible = this.montoDisponible + monto;
+            this.depositoDisponible = this.depositoDisponible + deposito;
             System.out.println("saldo actual después de depositar" + this.getSaldo() +
-                    " descubierto quedó en" + this.montoDisponible);
+                    " descubierto quedó en" + this.depositoDisponible);
         }
-    } else {
-        Double nuevoSaldo = this.getSaldo() + monto;
-        this.setSaldo(nuevoSaldo);
-        System.out.println("saldo actual después de depositar " + this.getSaldo());
+       } else{
+            Double nuevoSaldo = this.getSaldo() + deposito;
+            this.setSaldo(nuevoSaldo);
+            System.out.println("saldo actual después de depositar " + this.getSaldo());
         }
 
     }
 
-
+}
 
