@@ -11,6 +11,10 @@ public class Cheque {
         this.fechaPago = fechaPago;
     }
 
+    public Double getMonto() {
+        return monto;
+    }
+
     @Override
     public String toString() {
         return "Cheque{" +

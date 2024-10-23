@@ -31,7 +31,7 @@ public class CuentaCorriente extends Cuenta {
 
     @Override
     public void depositar(Double deposito) {
-        if (deposito <= 0) {
+    /*    if (deposito <= 0) {
             System.out.println("Ingrese un monto valido ");
         } else if (!(montoDescubiertoAutorizado.equals(limiteMontoAutorizado))) {
             Double deuda = limiteMontoAutorizado - montoDescubiertoAutorizado;
@@ -52,13 +52,30 @@ public class CuentaCorriente extends Cuenta {
             System.out.println("saldo actual después de depositar" + this.getSaldo() +
                     " descubierto quedó en" + this.depositoDisponible);
         }
-       } else{
+        else{
             Double nuevoSaldo = this.getSaldo() + deposito;
             this.setSaldo(nuevoSaldo);
             System.out.println("saldo actual después de depositar " + this.getSaldo());
         }
 
-    }
+    }*/
 
+    }
+    public void depositarCheque(Cheque cheque){
+        if (cheque.getMonto()<= 0.0){
+            System.out.println("Ingresa un monto valido");
+        } else {
+            Double diferencia = limiteMontoAutorizado - montoDescubiertoAutorizado;
+            if (cheque.getMonto()>= diferencia){
+                montoDescubiertoAutorizado += diferencia;
+              Double depositoRestante =  cheque.getMonto()- diferencia;
+              setSaldo(getSaldo()+depositoRestante);
+                System.out.println("Saldo actual"+ getSaldo());
+            }else {
+                montoDescubiertoAutorizado += diferencia;
+                System.out.println("el monto queda en " + montoDescubiertoAutorizado);
+            }
+        }
+    }
 }
 
