@@ -31,47 +31,38 @@ public class CuentaCorriente extends Cuenta {
 
     @Override
     public void depositar(Double deposito) {
-    /*    if (deposito <= 0) {
+
+        if (deposito <= 0.0) {
             System.out.println("Ingrese un monto valido ");
-        } else if (!(montoDescubiertoAutorizado.equals(limiteMontoAutorizado))) {
-            Double deuda = limiteMontoAutorizado - montoDescubiertoAutorizado;
-            montoDescubiertoAutorizado = montoDescubiertoAutorizado + deuda;
-            deposito = deposito - deuda;
-            setSaldo(getSaldo() + deposito);
-            System.out.println("El saldo quedo en " + getSaldo() + "el monto disponible es " + montoDescubiertoAutorizado);
-        }
-        if (deposito >= deuda) {
-
-            this.depositoDisponible = this.depositoDisponible + deuda;
-            deposito -= deuda;
-            this.setSaldo(deposito);
-            System.out.println("saldo actual después de depositar" + this.getSaldo());
-
         } else {
-            this.depositoDisponible = this.depositoDisponible + deposito;
-            System.out.println("saldo actual después de depositar" + this.getSaldo() +
-                    " descubierto quedó en" + this.depositoDisponible);
-        }
-        else{
-            Double nuevoSaldo = this.getSaldo() + deposito;
-            this.setSaldo(nuevoSaldo);
-            System.out.println("saldo actual después de depositar " + this.getSaldo());
-        }
+            Double deuda = limiteMontoAutorizado - montoDescubiertoAutorizado;
 
-    }*/
+            if (deposito >= deuda) {
+                montoDescubiertoAutorizado += deuda;
+                Double depositoRestante = deposito - deuda;
+                setSaldo(getSaldo() + depositoRestante);
+                System.out.println("Saldo actual " + getSaldo());
+            } else {
+                montoDescubiertoAutorizado += deuda;
+                System.out.println("el monto queda en " + montoDescubiertoAutorizado);
+            }
+
+
+        }
 
     }
-    public void depositarCheque(Cheque cheque){
-        if (cheque.getMonto()<= 0.0){
+
+    public void depositarCheque(Cheque cheque) {
+        if (cheque.getMonto() <= 0.0) {
             System.out.println("Ingresa un monto valido");
         } else {
             Double diferencia = limiteMontoAutorizado - montoDescubiertoAutorizado;
-            if (cheque.getMonto()>= diferencia){
+            if (cheque.getMonto() >= diferencia) {
                 montoDescubiertoAutorizado += diferencia;
-              Double depositoRestante =  cheque.getMonto()- diferencia;
-              setSaldo(getSaldo()+depositoRestante);
-                System.out.println("Saldo actual"+ getSaldo());
-            }else {
+                Double depositoRestante = cheque.getMonto() - diferencia;
+                setSaldo(getSaldo() + depositoRestante);
+                System.out.println("Saldo actual " + getSaldo());
+            } else {
                 montoDescubiertoAutorizado += diferencia;
                 System.out.println("el monto queda en " + montoDescubiertoAutorizado);
             }
