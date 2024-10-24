@@ -35,4 +35,9 @@ public class Cliente implements Comparable<Cliente>{
         }
         return this.dni.equals(((Cliente) obj).dni);
     }
+
+    @Override
+    public int compareTo(Cliente o) {
+        return 0;
+    }
 }
