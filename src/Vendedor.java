@@ -25,7 +25,7 @@ public class Vendedor implements Comparable<Vendedor> {
 
     @Override
     public int compareTo(Vendedor o) {
-        return this.sueldo.compareTo(o.sueldo);
+        return this.ventas.compareTo(o.ventas);
 
     }
 
@@ -52,7 +52,7 @@ public class Vendedor implements Comparable<Vendedor> {
 
 
     public Double cobrarSueldo() {
-return 0.0
+return 0.0;
     }
 public void listarTareas(){
     tareas.forEach(i -> System.out.println(i));
