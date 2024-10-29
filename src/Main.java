@@ -25,6 +25,14 @@ public class Main {
         vendedoreset.add(vendedor2);
         vendedoreset.add(vendedor2);
         vendedoreset.forEach(vendedor -> System.out.println(vendedor));
+        Map<Vendedor>vendedoresMap = new HashMap<>();
+        vendedoresMap.put(vendedor1);
+        vendedoresMap.put(vendedor1);
+        vendedoresMap.put(vendedor2);
+        vendedoresMap.put(vendedor2);
+        vendedoresMap.forEach(vendedor -> System.out.println(vendedor));
+
+
 
 
 
@@ -33,7 +41,7 @@ public class Main {
 
     }
 
-    public static void agregarVendedor(Vendedor vendedor,Set<>){
+    public static void agregarVendedor(Vendedor vendedor,Set<ven>){
         vendedor
     }
 }
