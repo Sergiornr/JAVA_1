@@ -32,10 +32,6 @@ public class Producto {
     public Double calcularGanancia(){
        return precioVenta - precioCompra;
     }
-public int compararNombre(Producto otroProducto){
-        return this.nombre.compareTo(otroProducto.nombre);
-}
-
 public Producto(String nombreR, Double precioCompraR, Double precioVentaR, Integer stockR){
         this.nombre = nombreR;
         this.precioCompra = precioCompraR;
