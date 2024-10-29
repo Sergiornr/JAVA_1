@@ -13,18 +13,18 @@ public class Main {
         Producto ollaAluminio = new Producto("Essen",60000.0, 80000.0,100);
         Producto ollaAcero = new Producto("Eccen", 50000.0, 70000.0, 20 );
         ollaAcero.stockDisponible();
-        System.out.println("Tiene stock disponible: " + ollaAcero.stockDisponible());
-
+        ollaAluminio.stockDisponible();
         System.out.println(" La ganancia es de : " + ollaAcero.calcularGanancia());
-        Venta venta1 = new Venta(ollaAcero, 123654, "juan", new Date(124,2,20),56);
-        Venta venta2 = new Venta(ollaAcero, 123654, "juan", new Date(124,2,20),56);
-        Venta venta3 = new Venta(venta3,86000.0,1432, martin, 15/05/2024, 10);
-        System.out.println("venta1 y venta2 son iguales?" + venta1.verificarDosVentasIguales(venta2));
-        System.out.println("venta1 y venta3 son iguales?" + venta1.verificarDosVentasIguales(venta3));
+        Venta venta1 = new Venta(ollaAcero, 123654, "juan","29/10/2024",56);
+        Venta venta2 = new Venta(ollaAcero, 123654, "juan", "29/10/2024",56);
+        Venta venta3 = new Venta(ollaAluminio,457890,"Martin", "20/10/2024", 10);
+        venta1.verificarDosVentasIguales(venta2);
+        venta1.verificarDosVentasIguales(venta3);
         System.out.println("calcular monto de venta " + venta1.calcularMontoVenta());
-        System.out.println("comparando Producto1 y Producto2 "+ ollaAcero.compararStock(ollaAluminio));
+        //comparando productos en base al stock
+        ollaAcero.compararStock(ollaAluminio);
         System.out.println("comision: "+ venta1.calcularComisionVenta());
-        System.out.println("El costo total es de : $"+ ollaAcero.calcularCostoTotal());
+        System.out.println("El costo total es de : $"+ venta1.calcularCostoTotal());
         System.out.println(" la info de venta es: "+ venta1.toString());
 // comparar productos en base al stock
 

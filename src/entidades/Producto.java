@@ -22,8 +22,12 @@ public class Producto {
         this.stock = stock;
     }
 
-    public boolean stockDisponible(){
-        return stock > 0;
+    public void stockDisponible(){
+       if(this.getStock() > 0 ){
+           System.out.println("Hay stock disponible");
+       } else {
+           System.out.println("No hay stock disponible");
+       }
     }
     public Double calcularGanancia(){
        return precioVenta - precioCompra;
@@ -50,11 +54,12 @@ public void compararStock(Producto producto){
         }
 }
 
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "stock=" + stock +
+                '}';
+    }
 
 
-
-
-public Double calcularCostoTotal() {
-        return precioCompra * stock;
-}
 }
