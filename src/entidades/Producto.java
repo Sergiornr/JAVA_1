@@ -18,6 +18,10 @@ public class Producto {
     }
     public Integer getStock(){return stock;}
 
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
     public boolean stockDisponible(){
         return stock > 0;
     }
@@ -35,16 +39,18 @@ public Producto(String nombreR, Double precioCompraR, Double precioVentaR, Integ
         this.stock = stockR;
 
 }
-public Integer compararProducto(Producto otroProducto){
-        if (this.stock > otroProducto.getStock()){
-            return 1;
+public void compararStock(Producto producto){
+        if (this.stock > producto.getStock()){
+            System.out.println("El producto tiene mas stock");
 
-        } else if (this.stock < otroProducto.getStock()){
-            return -1;
+        } else if (this.stock < producto.getStock()){
+            System.out.println("El producto tiene menos stock");
         } else {
-            return 0;
+            System.out.println("El producto tiene igual stock");
         }
 }
+
+
 
 
 
