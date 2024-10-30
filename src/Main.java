@@ -23,7 +23,7 @@ public class Main {
         //relacion de uso
         System.out.println("probando metodos ");
         cuentaCorriente.depositarCheque(cheque1);
-        cuentaComitente.extraer(60000.0);
+        cuentaComitente.extraer(6000.0);
         cuentaComitente.depositar(10000.0);
 
 

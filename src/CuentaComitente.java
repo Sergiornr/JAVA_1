@@ -19,7 +19,7 @@ public class CuentaComitente extends Cuenta{
         }
     }
     // extraer con clave, sin restriccion del minimo
-    public Double extraer( Double monto, String clave){
+    public Double extraerConClave( Double monto, String clave){
         if (clave.equals(this.claveAutorizacion)){
             setSaldo(getSaldo()- monto);
             return monto;
