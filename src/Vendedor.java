@@ -30,7 +30,7 @@ public class Vendedor implements Comparable<Vendedor> {
 
     public Integer getDni() {
         return dni;
-    }}
+    }
 
 
     @Override
@@ -52,50 +52,50 @@ public class Vendedor implements Comparable<Vendedor> {
                 '}';
     }
 
-    public void vender() {
+public void vender() {
 
+}
+
+public void reponerStock() {
+
+}
+
+
+public Double cobrarSueldo() {
+    return 0.0;
+}
+
+public void listarTareas() {
+    tareas.forEach(i -> System.out.println(i));
+}
+
+public void agregarTareas(String tarea) {
+    tareas.add(tarea);
+}
+
+public void eliminarTareas(String tarea) {
+    if (!tareas.contains(tarea)) {
+        System.out.println("la tarea no esta en la lista");
+    } else {
+        tareas.remove(tarea);
     }
+}
 
-    public void reponerStock() {
+@Override
+public int hashCode() {
+    return Objects.hash(dni);
 
+}
+
+@Override
+public boolean equals(Object obj) {
+    boolean resultado;
+    if (obj == null || !obj.getClass().equals(this.getClass())) {
+        resultado = false;
+    } else {
+        Vendedor vendedorRecibido = (Vendedor) obj;
+        resultado = this.dni.equals(vendedorRecibido.dni);
     }
-
-
-    public Double cobrarSueldo() {
-        return 0.0;
-    }
-
-    public void listarTareas() {
-        tareas.forEach(i -> System.out.println(i));
-    }
-
-    public void agregarTareas(String tarea) {
-        tareas.add(tarea);
-    }
-
-    public void eliminarTareas(String tarea) {
-        if (!tareas.contains(tarea)) {
-            System.out.println("la tarea no esta en la lista");
-        } else {
-            tareas.remove(tarea);
-        }
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(dni);
-
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        boolean resultado;
-        if (obj == null || !obj.getClass().equals(this.getClass())) {
-            resultado = false;
-        } else {
-            Vendedor vendedorRecibido = (Vendedor) obj;
-            resultado = this.dni.equals(vendedorRecibido.dni);
-        }
-        return resultado;
-    }
+    return resultado;
+}
 }

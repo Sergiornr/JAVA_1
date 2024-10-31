@@ -11,6 +11,13 @@ public class Main {
         Vendedor vendedor2 = new Vendedor(56123456, "Damian", "Gomez", 456123, "B", 60000.0, 56);
         Vendedor vendedor3 = new Vendedor(56123459, "Pedro", "Soria", 456144, "C", 70000.0, 50);
         Vendedor vendedor4 = new Vendedor(56133465, "Javier", "Perez", 1145639874, "H", 90000.0, 95);
+
+        Producto ollaAcero = new Producto(654321,"Ollas de acero para la cocina");
+        Producto ollaAluminio = new Producto(654325,"Ollas de aluminio para la cocina");
+
+
+
+
         vendedor1.agregarTareas("ordenar estantes");
         vendedor1.listarTareas();
         vendedor1.eliminarTareas("ordenar estantes");
@@ -36,6 +43,11 @@ public class Main {
         vendedoreset.add(vendedor2);
         vendedoreset.add(vendedor2);
         vendedoreset.add(vendedor4);
+
+        System.out.println("lista hashmap");
+        Map<Integer,Producto> productos = new HashMap<>();
+        productos.put(ollaAcero.getClave(),ollaAcero);
+        productos.put(ollaAluminio.getClave(),ollaAluminio);
         //eliminar vendedor
         //vendedoreset.remove(vendedor1);
         vendedoreset.forEach(vendedor -> System.out.println(vendedor));
@@ -57,10 +69,17 @@ public class Main {
         System.out.println("Buscar vendedor por dni: 56133465");
         buscarVendedorPorDni(vendedoreset, 56133465);
         System.out.println("Imprimir apellido ordenado alfabeticamente");
-        imprimirApellidosOrdenados(vendedores,"Flores");
-        imprimirApellidosOrdenados(vendedores,"Gomez");
-        imprimirApellidosOrdenados(vendedores,"Soria");
-        imprimirApellidosOrdenados(vendedores,"Perez");
+        imprimirApellidosOrdenados(vendedores);
+        System.out.println("Buscar producto con clave");
+        buscarProductos(productos,654321);
+        buscarProductos(productos,654328);
+        buscarProductos(productos,654325);
+        System.out.println("eliminar Productos");
+        eliminarProductos(productos,ollaAcero);
+
+
+
+
 
 
         //Map<Integer,Vendedor>vendedoresMap = new HashMap<>();
@@ -103,15 +122,36 @@ public class Main {
         }
     }
 
-    public static void imprimirApellidosOrdenados(List<Vendedor> Lista, String apellido) {
-        List<String> apellido = new ArrayList<>();
+    public static void imprimirApellidosOrdenados(List<Vendedor> Lista) {
+        List<String> apellidos = new ArrayList<>();
         for (Vendedor vendedor : Lista) {
-            apellido.add(vendedor.getApellido());
+            apellidos.add(vendedor.getApellido());
         }
-        collections.sort(apellido);
+        Collections.sort(apellidos);
         {
-            for (String apellido : apellido) {
+            for (String apellido : apellidos) {
                 System.out.println(apellido);
+            }
+        }
+    }
+    public static void buscarProductos(Map<Integer,Producto> productos,Integer clave){
+        if(clave == null){
+            System.out.println("Ingrese una clave valida");
+        } else {
+           if (!productos.containsKey(clave)){
+               System.out.println("Clave inexistente");
+           }else {
+               System.out.println(productos.get(clave));
+           }
+        }
+    }
+    public static void eliminarProductos(Map<Integer,Producto> productos,Producto producto){
+        if(!productos.containsKey(producto.getClave())){
+            System.out.println("Producto inexistente");
+        } else{
+            productos.remove(producto.getClave());
+            for (Integer clave: productos.keySet()){
+                System.out.println(productos.get(clave));
             }
         }
     }
