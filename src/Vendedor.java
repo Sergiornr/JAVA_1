@@ -24,9 +24,14 @@ public class Vendedor implements Comparable<Vendedor> {
         this.tareas = new ArrayList<>();
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
     public Integer getDni() {
         return dni;
-    }
+    }}
+
 
     @Override
     public int compareTo(Vendedor o) {

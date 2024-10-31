@@ -7,10 +7,10 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Vendedor vendedor1 = new Vendedor(56123456, "Juan", "F", 456167, "A", 80000.0, 54);
-        Vendedor vendedor2 = new Vendedor(56123456, "Damian", "g", 456123, "B", 60000.0, 56);
-        Vendedor vendedor3 = new Vendedor(56123459, "Pedro", "s", 456144, "C", 70000.0, 50);
-        Vendedor vendedor4 = new Vendedor(56133465,"Javier","Perez",1145639874,"H",90000.0,95);
+        Vendedor vendedor1 = new Vendedor(56123456, "Juan", "Flores", 456167, "A", 80000.0, 54);
+        Vendedor vendedor2 = new Vendedor(56123456, "Damian", "Gomez", 456123, "B", 60000.0, 56);
+        Vendedor vendedor3 = new Vendedor(56123459, "Pedro", "Soria", 456144, "C", 70000.0, 50);
+        Vendedor vendedor4 = new Vendedor(56133465, "Javier", "Perez", 1145639874, "H", 90000.0, 95);
         vendedor1.agregarTareas("ordenar estantes");
         vendedor1.listarTareas();
         vendedor1.eliminarTareas("ordenar estantes");
@@ -23,7 +23,8 @@ public class Main {
         vendedores.add(vendedor1);
         vendedores.add(vendedor2);
         vendedores.add(vendedor3);
-        vendedores.remove(vendedor1);
+        vendedores.add(vendedor4);
+        //vendedores.remove(vendedor1);
         vendedores.forEach(vendedor -> System.out.println(vendedor));
         Collections.sort(vendedores);
         vendedores.forEach(vendedor -> System.out.println(vendedor));
@@ -55,6 +56,11 @@ public class Main {
         buscarVendedorPorDni(vendedoreset, 56123451);
         System.out.println("Buscar vendedor por dni: 56133465");
         buscarVendedorPorDni(vendedoreset, 56133465);
+        System.out.println("Imprimir apellido ordenado alfabeticamente");
+        imprimirApellidosOrdenados(vendedores,"Flores");
+        imprimirApellidosOrdenados(vendedores,"Gomez");
+        imprimirApellidosOrdenados(vendedores,"Soria");
+        imprimirApellidosOrdenados(vendedores,"Perez");
 
 
         //Map<Integer,Vendedor>vendedoresMap = new HashMap<>();
@@ -96,6 +102,21 @@ public class Main {
             }
         }
     }
+
+    public static void imprimirApellidosOrdenados(List<Vendedor> Lista, String apellido) {
+        List<String> apellido = new ArrayList<>();
+        for (Vendedor vendedor : Lista) {
+            apellido.add(vendedor.getApellido());
+        }
+        collections.sort(apellido);
+        {
+            for (String apellido : apellido) {
+                System.out.println(apellido);
+            }
+        }
+    }
 }
+
+
 
 
