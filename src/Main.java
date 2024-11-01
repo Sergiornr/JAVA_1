@@ -17,7 +17,7 @@ public class Main {
         Integer num2 = scanner.nextInt();
             System.out.println(num1 / num2);
         } catch (InputMismatchException e) {
-            System.err.println(e.getMessage());
+            System.err.println("se lanzo la excepcion del error: " + e);
         } catch (ArithmeticException e) {
             System.err.println(e.getMessage());
         } finally {
