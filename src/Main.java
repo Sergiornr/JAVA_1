@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         try {
         System.out.println("Ingrese un numero");
         Integer num1 = scanner.nextInt();
@@ -20,6 +20,18 @@ public class Main {
             System.err.println("se lanzo la excepcion del error: " + e);
         } catch (ArithmeticException e) {
             System.err.println(e.getMessage());
+        } finally {
+            System.out.println("terminar ejemplo");
+        }*/
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese un numero");
+        String texto = scanner.nextLine();
+        try {
+            int num = Integer.parseInt(texto);
+            System.out.println("El numero ingresado es: " + num);
+        } catch (NumberFormatException e){
+            System.err.println("Ocurrio el siguiente error " + e+ "es imposible parsear el dato ingresado");
         } finally {
             System.out.println("terminar ejemplo");
         }
