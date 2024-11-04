@@ -12,16 +12,25 @@ public class Main {
 
         Producto ollaAluminio = new Producto("Essen",60000.0, 80000.0,100);
         Producto ollaAcero = new Producto("Eccen", 50000.0, 70000.0, 20 );
+        Producto ollaTeflon = new Producto("Ezzen", 80000.0, 60000.0, 0 );
+        System.out.println("Hay stock disponible?");
         ollaAcero.stockDisponible();
         ollaAluminio.stockDisponible();
+        ollaTeflon.stockDisponible();
+
         System.out.println(" La ganancia es de : " + ollaAcero.calcularGanancia());
         Venta venta1 = new Venta(ollaAcero, 123654, "juan","29/10/2024",56);
         Venta venta2 = new Venta(ollaAcero, 123654, "juan", "29/10/2024",56);
         Venta venta3 = new Venta(ollaAluminio,457890,"Martin", "20/10/2024", 10);
+
+        System.out.println(" verificar si dos ventas son iguales");
         venta1.verificarDosVentasIguales(venta2);
         venta1.verificarDosVentasIguales(venta3);
+
         System.out.println("calcular monto de venta " + venta1.calcularMontoVenta());
         //comparando productos en base al stock
+
+        System.out.println("Comparar productos en base al stock");
         ollaAcero.compararStock(ollaAluminio);
         System.out.println("comision: "+ venta1.calcularComisionVenta());
         System.out.println("El costo total es de : $"+ venta1.calcularCostoTotal());
