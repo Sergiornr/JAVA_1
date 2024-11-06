@@ -1,159 +1,62 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        faltasDisponibles(23,75);
+        Paciente paciente1 = new Paciente(45098765, "Leonardo", 118765432, "23/10/2024");
+        Paciente paciente2 = new Paciente(45098756, "Marcelo", 118765443, "23/10/2024");
+        Paciente paciente3 = new Paciente(45098743, "Maximiliano", 118765498, "23/10/2024");
+        Profesional profesional1 = new Profesional(30208187, "Diego", 1134876521);
+        Profesional profesional2 = new Profesional(30208178, "Leonel", 1134876556);
+        Profesional profesional3 = new Profesional(30208189, "Alfredo", 1134876509);
+        Persona persona1 = new Persona(29098765,"Dario",1156890642);
+        Persona persona2 = new Persona(29098756,"Beatriz",1156890624);
+        Persona persona3 = new Persona(29098732,"Gonzalo",1156890685);
 
 
-        otorgaPrestamo(200.0,800.0);
-        esMayor(3.2, 6.4 , 0.5);
+        Set<Persona> personaSet = new HashSet<>();
+        personaSet.add(persona1);
+        personaSet.add(persona2);
+        personaSet.add(persona3);
+        Collections.sort(personaSet);
+        personaSet.forEach(ven -> System.out.println(ven.toString()));
 
 
-        String nombre = "Sergio";
+        Set<Paciente> pacienteSet = new HashSet<>();
+        pacienteSet.add(paciente1);
+        pacienteSet.add(paciente2);
+        pacienteSet.add(paciente3);
+        Collections.sort(pacienteSet);
+        pacienteSet.forEach(ven -> System.out.println(ven.toString()));
 
-        equalString(nombre.toLowerCase(), "sergio");
+        Set<Profesional> profesionalSet = new HashSet<>();
+        profesionalSet.add(profesional1);
+        profesionalSet.add(profesional2);
+        profesionalSet.add(profesional3);
+        Collections.sort(profesionalSet);
+        profesionalSet.forEach(ven -> System.out.println(ven.toString()));
+    }
+
+        public static void buscarVendedorPorDNI (Integer dni, Set < Persona > persona ){
+
+            if (dni == null) {
+                System.out.println("ingrese un dni válido");
+            } else {
+                for (Persona personas : persona) {
+                    if (personas.getDni(dni) {
+                        System.out.println(personas.toString());
 
 
-        Boolean esDivisible = esDivisible(30, 30);
-        System.out.println(esDivisible);
+                    }
+                }
 
 
-
-
-     char inicial = devuelveInicial("sergio");
-        System.out.println(inicial);
-        //Definir dos cadenas de texto. Comprobar si son iguales o distintas e indicar mediante un mensaje.
-        //Definir dos Integer y determinar cuál es mayor, cuál es menor o si son iguales. Imprimir el resultado obtenido.
-        //Crea una fecha de nacimiento y calcula la edad. Además imprimí por consola la edad, junto con la fecha formateada de esta forma “YY MM DD”.
-        //Convertir las variables anteriores en String e imprimirlas por consola indicando su clase.
-
-
-        String text1= " Hola ";
-        String text2= "Hello";
-        int resultado2;
-        if (text1.equals(text2)) {
-            System.out.println("Son iguales");
+            }
         }
-        else {
-            System.out.println("Son distintos");
-        }
-
-Integer num1 = 3;
-Integer num2 = 5 ;
-if (num1.compareTo(num2)==1) {
-    System.out.println(" Es mayor");
 }
-    else if (num1.compareTo(num2)==0){
-    System.out.println(" Son iguales");
-
-}
-    else{
-    System.out.println(" Es menor");
-}
-
-
-        LocalDate fechaNacimiento = LocalDate.of(1987,5,2);
-    LocalDate fechaActual = LocalDate.now();
- Integer resta = fechaActual.getYear() - fechaNacimiento.getYear();
-        DateTimeFormatter formatear= DateTimeFormatter.ofPattern("dd MM yyyy");
-        String fechaFormateada= formatear.format(fechaNacimiento) ;
-        System.out.println(resta +" "+ fechaFormateada );
-
-
-
-
-        String stringA= Integer.toString(num1);
-        String stringB= Integer.toString(num2);
-        System.out.println(stringA.getClass() + " " + stringB.getClass());
-//Crea una función que reciba un nombre y retorne la inicial del mismo.
-// Debe contar la cantidad de veces que se repite dicho carácter.
-
-
-
-
-
-    }
-    public static char devuelveInicial (String nombre ){
-        return nombre.charAt(0);
-    }
-
-    //Crea una función que reciba como parámetro dos valores y devuelva un boolean.
-    // La misma debe comprobar si el primer número es divisible por el segundo.
-
-    public static boolean esDivisible (Integer numA, Integer numB){
-        return numA%numB == 0;
-    }
-
-
-
-    /*Crea una función que reciba dos cadenas de texto.
-    Debe comparar si son iguales y retorna
-    un booleano además de imprimir un mensaje con el resultado.
-     */
- public static boolean equalString (String textA, String textB){
-     Boolean resultado = textA.equals(textB);
-     System.out.println(resultado);
-     return resultado ;
- }
-/*Definir dos variables Integer y asignarles un valor a cada una,
-crea una función que determine si el primero es mayor que el producto del segundo y un porcentaje dado.*/
-
-    public static boolean esMayor (Double numA , Double numB, Double porcentaje){
-        Double productoBP = numB * porcentaje;
-
-        if (numA.compareTo(productoBP)== 1){
-            System.out.println("El primero es mayor");
-            return true;
-        } else if (numA.compareTo(productoBP)== 0) {
-            System.out.println("El primero es igual");
-            return false;
-        } else  {
-            System.out.println("El primero es menor");
-            return false;
-        }
-    }
-
-
-
-
-/*Debemos desarrollar una funcionalidad para una entidad de préstamos que indique
-si la persona está habilitada a obtener uno en base a que el monto solicitado no supere el 35% de su sueldo.
- */
-public static void otorgaPrestamo (Double monto, Double sueldo){
-    if (sueldo*0.35 > monto){
-        System.out.println("Prestamo otorgado");
-
-    }else {
-        System.out.println("Prestamo denegado");
-    }
-    //1. Escribir una función para calcular la cantidad de faltas
-    //disponibles de acuerdo a un porcentaje de asistencia y
-    //cantidad de encuentros determinado¿Cuál es el resultado para
-    //una cursada de 23 encuentros que requiere un 75% de
-    //asistencia? ¿Y para el caso de este módulo?
-
-    }
-
-public static void faltasDisponibles (  Integer encuentros,  Integer porcentajeA ){
-
-    Integer faltasDisponibles =  encuentros - encuentros * porcentajeA/100;
-    System.out.println("Faltas permitidas : " + faltasDisponibles);
-
-}
-//3. Necesitamos crear una función que reciba dos números en
-//formato texto y retorne el cociente de dividir el primero
-//por el segundo.
-
-
-
-
-
-
-}
-
-
-
